@@ -29,13 +29,6 @@ const iconMap: Record<string, React.ElementType> = {
   BarChart3,
 };
 
-const serviceImages: Record<string, string> = {
-  "web-dev": "/images/service-1.png",
-  "ui-ux": "/images/service-2.png",
-  "seo": "/images/service-3.png",
-  "guest-posting": "/images/service-4.png",
-};
-
 export default function Services() {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [selectedPackageTab, setSelectedPackageTab] = useState<number>(1); // Default to Growth / Professional
@@ -67,7 +60,6 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
           {servicesData.map((service) => {
             const IconComponent = iconMap[service.iconName] || Code2;
-            const customImg = serviceImages[service.id];
 
             return (
               <div
@@ -75,21 +67,10 @@ export default function Services() {
                 className="group relative rounded-3xl bg-slate-900/70 border border-slate-800/90 hover:border-emerald-500/40 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-emerald-500/10 backdrop-blur-sm"
               >
                 <div>
-                  {/* Top Bar: Icon + Price Pill / Badge */}
+                  {/* Top Bar: Clean Vector Icon + Price Pill / Badge */}
                   <div className="flex items-center justify-between mb-6">
-                    <div className="relative w-16 h-16 rounded-2xl bg-slate-800/80 border border-slate-700/60 p-2.5 flex items-center justify-center group-hover:border-emerald-500/50 group-hover:bg-emerald-500/10 transition-colors">
-                      {customImg ? (
-                        <div className="relative w-full h-full">
-                          <Image
-                            src={customImg}
-                            alt={service.title}
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                      ) : (
-                        <IconComponent className="w-8 h-8 text-emerald-400" />
-                      )}
+                    <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-slate-950 group-hover:border-emerald-400 shadow-md shadow-emerald-500/10 transition-all duration-300">
+                      <IconComponent className="w-7 h-7 transition-transform duration-300 group-hover:scale-110" />
                     </div>
 
                     <div className="flex flex-col items-end gap-1.5">
