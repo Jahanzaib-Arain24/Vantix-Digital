@@ -220,10 +220,10 @@ export default function Contact() {
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700/80 text-white text-sm focus:outline-none focus:border-emerald-500 transition-colors"
                     >
-                      <option value="$300 - $700">$300 - $700 (Starter)</option>
-                      <option value="$700 - $1,500">$700 - $1,500 (Standard)</option>
-                      <option value="$1,500 - $3,500">$1,500 - $3,500 (Growth)</option>
-                      <option value="$3,500+">$3,500+ (Enterprise)</option>
+                      <option value="$40 - $150">$40 - $150 (Starter / Single Placement)</option>
+                      <option value="$200 - $400">$200 - $400 (Kickstart / Local SEO / UI Kit)</option>
+                      <option value="$400 - $750">$400 - $750 (Growth Hub / Business Edition)</option>
+                      <option value="$900 - $1,500+">$900 - $1,500+ (Market Leader / Full Enterprise)</option>
                     </select>
                   </div>
                 </div>

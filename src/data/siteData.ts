@@ -1,3 +1,12 @@
+export interface PackageTier {
+  name: string;
+  tagline: string;
+  price: string;
+  timeline: string;
+  popular?: boolean;
+  deliverables: string[];
+}
+
 export interface Service {
   id: string;
   title: string;
@@ -5,7 +14,9 @@ export interface Service {
   description: string;
   iconName: string;
   badge?: string;
+  startingPrice: string;
   features: string[];
+  packages: PackageTier[];
 }
 
 export interface Feature {
@@ -58,9 +69,10 @@ export const siteConfig = {
     whatsapp: "https://wa.me/447840179553",
   },
   guarantees: [
-    "Clear and transparent pricing based on project requirements",
-    "Any additional features or tools quoted separately with zero hidden fees",
-    "100% money back guarantee if agreed project deliverables are not fulfilled",
+    "Clear and transparent pricing based on official Service Level Agreements (SLAs)",
+    "Complimentary 1-Year Domain & Hosting setup on Hostinger included with Web Development",
+    "20% Combo Discount when bundling UI/UX Design + Web Development",
+    "100% money back guarantee if agreed project deliverables are not fulfilled in 7 days",
   ],
   stats: [
     { label: "Years Experience", value: "8+" },
@@ -75,53 +87,328 @@ export const servicesData: Service[] = [
     id: "web-dev",
     title: "Website Development",
     shortDesc: "Fast, secure, scalable and mobile-first websites.",
-    description: "We build fast, secure, and scalable websites tailored to your business goals. Our websites are responsive, SEO-optimized, and engineered for high conversion across all devices.",
+    description: "We build high-performance digital assets designed to scale business operations and increase market reach across Mobile, Tablet, and Desktop.",
     iconName: "Code2",
     badge: "Most Popular",
-    features: ["Next.js & React Apps", "E-Commerce Solutions", "Speed & Core Web Vitals", "Custom CMS Integration"],
+    startingPrice: "From $200",
+    features: [
+      "Next.js & React App Architecture",
+      "Free 1-Year Domain & Hostinger Setup",
+      "Conversion & Speed Optimization",
+      "Priority 3-Month Technical Support"
+    ],
+    packages: [
+      {
+        name: "01. The Kickstart (Startup)",
+        tagline: "Establish Brand Identity",
+        price: "$200 - $250",
+        timeline: "5-7 Business Days",
+        deliverables: [
+          "High-Impact Responsive Landing Page",
+          "Custom Logo & Banner Design",
+          "Hostinger Server Setup Included",
+          "Standard Technical Support",
+          "7-Day Full Refund Guarantee"
+        ]
+      },
+      {
+        name: "02. The Growth Hub (Professional)",
+        tagline: "Lead Generation & Engagement",
+        price: "$400 - $600",
+        timeline: "10-14 Business Days",
+        popular: true,
+        deliverables: [
+          "Multi-Page Business Platform",
+          "Complete Brand Visual Identity",
+          "SEO & Social Channels Integration",
+          "Priority 3-Month Dedicated Support",
+          "Free 1-Year Domain & Hosting"
+        ]
+      },
+      {
+        name: "03. The Market Leader (Premium)",
+        tagline: "Market Dominance & E-Commerce",
+        price: "$900 - $1,200",
+        timeline: "21-30 Business Days",
+        deliverables: [
+          "Full-Scale Enterprise / E-Commerce Solution",
+          "Premium Graphics & Assets Suite",
+          "24/7 Premium Maintenance & Monitoring",
+          "Custom CMS & CRM Funnels",
+          "High-Reliability Server Optimization"
+        ]
+      }
+    ]
   },
   {
     id: "ui-ux",
     title: "UI/UX Creative Design",
-    shortDesc: "Modern, intuitive interfaces crafted for conversion.",
-    description: "We design intuitive, visually appealing, and user-centered interfaces that enhance user engagement and improve conversion rates with modern clarity and aesthetics.",
+    shortDesc: "Pixel-perfect, conversion-driven user interface design in Figma.",
+    description: "We craft interfaces that guide users towards active conversions (buying, booking, or contacting) with mathematical design-to-code precision.",
     iconName: "Palette",
-    badge: "Creative",
-    features: ["Figma Wireframes & Prototypes", "Design Systems", "Mobile App UI", "User Journey Mapping"],
+    badge: "Design-To-Code",
+    startingPrice: "From $80",
+    features: [
+      "Figma Clickable Interactive Prototypes",
+      "Complete UI Kits & Design Systems",
+      "20% Combo Discount with Web Dev",
+      "Unlimited Revisions until 100% Satisfaction"
+    ],
+    packages: [
+      {
+        name: "01. The Concept (Starter)",
+        tagline: "High-Impact Landing / MVP",
+        price: "$80 - $120",
+        timeline: "3 Business Days",
+        deliverables: [
+          "2 Premium High-Fidelity Screens (Home + Inner)",
+          "Desktop & Mobile Optimized Views",
+          "Source Figma Files + Custom Typography & Icons",
+          "Unlimited Revisions"
+        ]
+      },
+      {
+        name: "02. The Professional (Business)",
+        tagline: "Complete Business Website",
+        price: "$250 - $350",
+        timeline: "5 Business Days",
+        popular: true,
+        deliverables: [
+          "Up to 6 Premium High-Fidelity Screens",
+          "Full Interactive Clickable Prototype",
+          "Complete Brand UI Kit (Colors, Buttons, Icons)",
+          "Asset Export in WebP/SVG"
+        ]
+      },
+      {
+        name: "03. The Market Leader (Premium)",
+        tagline: "E-Commerce / SaaS Application",
+        price: "$500 - $750",
+        timeline: "7-10 Business Days",
+        deliverables: [
+          "10+ Premium Screens (Full User Journey Flow)",
+          "UX Competitor Research & Wireframing",
+          "Full Design System Documentation",
+          "Design Walkthrough Strategy Call"
+        ]
+      }
+    ]
   },
   {
     id: "seo",
     title: "SEO (Search Engine Optimization)",
-    shortDesc: "Rank on page 1 of Google with ethical, data-driven SEO.",
-    description: "We help your business rank higher on search engines, attracting quality organic traffic that converts into loyal customers. Sustainable, data-driven strategies.",
+    shortDesc: "Code-First SEO engineered for Google search dominance.",
+    description: "We don't just build links; we engineer Search Engine Dominance through Core Web Vitals optimization, semantic schema, and 100% white-hat drip-fed authority links.",
     iconName: "TrendingUp",
-    badge: "High ROI",
-    features: ["On-Page & Technical SEO", "Keyword Research & Strategy", "Local SEO & Google Maps", "Performance Tracking"],
+    badge: "Code-First",
+    startingPrice: "From $150/mo",
+    features: [
+      "Technical Core Web Vitals Optimization",
+      "Tiered High-Authority Backlink Structure",
+      "UK/USA Local Citations & Google Maps",
+      "100% White-Hat Drip-Feed Safety"
+    ],
+    packages: [
+      {
+        name: "01. Local Visibility (Startup)",
+        tagline: "Local Maps & Small Business",
+        price: "$150 - $200 / Month",
+        timeline: "10-Day Work Cycle",
+        deliverables: [
+          "30 Tier-1 High Authority + 100 Tier-2 Support Links",
+          "10 Essential UK/USA Business Listings / Citations",
+          "Monthly Off-Page Strategy Report",
+          "Local Search Ranking Push"
+        ]
+      },
+      {
+        name: "02. Business Authority (Growth)",
+        tagline: "Lead Generation & Competitor Rank",
+        price: "$350 - $450 / Month",
+        timeline: "21-Day Work Cycle",
+        popular: true,
+        deliverables: [
+          "70 Tier-1 Authority + 200 Tier-2 Contextual Links",
+          "Full Technical SEO Audit & Speed Optimization",
+          "Competitor Backlink & Keyword Intelligence",
+          "Weekly Keyword Climb Tracking"
+        ]
+      },
+      {
+        name: "03. Market Dominance (Enterprise)",
+        tagline: "National Dominance & E-Commerce",
+        price: "$700 - $900 / Month",
+        timeline: "30-Day Work Cycle",
+        deliverables: [
+          "100+ Premium Tier-1 + 400 Tier-2 Contextual Links",
+          "50 Elite Business Listings (Yelp, YellowPages)",
+          "Core Web Vitals Code Tuning & Schema Markup",
+          "Dedicated SEO Strategist & Priority Support"
+        ]
+      }
+    ]
   },
   {
     id: "guest-posting",
     title: "Guest Posting & Link Building",
-    shortDesc: "High authority backlinks for long-term ranking power.",
-    description: "We grow your online presence through strategic guest posting, building high-quality backlinks that improve domain authority and search visibility.",
+    shortDesc: "Manual outreach with real human traffic and permanent do-follow backlinks.",
+    description: "Quality over quantity. We secure contextual guest posts on verified niche-relevant publications with genuine UK/USA traffic and zero spam score.",
     iconName: "Globe2",
-    badge: "Authority",
-    features: ["High DA/DR Placements", "Niche-Relevant Outreach", "Editorial Quality Content", "Safe & White-Hat Methods"],
+    badge: "Real Traffic",
+    startingPrice: "From $40/post",
+    features: [
+      "Manual Outreach (No PBNs / Bot Links)",
+      "Vetted via Ahrefs & Semrush Traffic",
+      "Free 500-1000 Word SEO Article Included",
+      "Permanent Do-Follow & 30-Day Index Guarantee"
+    ],
+    packages: [
+      {
+        name: "01. Standard Outreach (Starter)",
+        tagline: "Niche Authority Foundation",
+        price: "$40 - $60 / Post",
+        timeline: "5-7 Business Days",
+        deliverables: [
+          "DA/DR 20+ Sites | 1k - 5k Monthly Traffic",
+          "500+ Words SEO-Optimized Article Included",
+          "Permanent Do-Follow In-Content Link",
+          "30-Day Google Indexing Guarantee"
+        ]
+      },
+      {
+        name: "02. Authority Booster (Growth)",
+        tagline: "Competitive Keyword Climber",
+        price: "$100 - $180 / Post",
+        timeline: "10-14 Business Days",
+        popular: true,
+        deliverables: [
+          "DA/DR 40+ Sites | 10k - 50k Monthly Traffic",
+          "800+ Words Premium SEO Article",
+          "Guaranteed Real UK/USA Audience",
+          "Ahrefs / Semrush Proof Report"
+        ]
+      },
+      {
+        name: "03. Industry Leader (Elite)",
+        tagline: "High-Traffic Brand Authority",
+        price: "$300 - $500+ / Post",
+        timeline: "15-21 Business Days",
+        deliverables: [
+          "DA/DR 60+ Sites | 100k+ Monthly Real Visitors",
+          "Journalism-Grade Content by Pro Writers",
+          "Brand Mentions in High-Authority Publications",
+          "12-Month Link Replacement Assurance"
+        ]
+      }
+    ]
   },
   {
     id: "graphic-design",
     title: "Brand Identity & Graphic Design",
-    shortDesc: "Memorable logos, social creatives and brand assets.",
-    description: "Build a standout visual identity with premium logos, social media marketing creatives, vector illustrations, and cohesive branding guidelines.",
+    shortDesc: "Standout logos, comprehensive branding books, and marketing creatives.",
+    description: "Build a memorable visual identity with precision vector logos, full brand guidelines, high-converting social media creatives, and premium marketing collateral.",
     iconName: "Sparkles",
-    features: ["Logo & Brand Guidelines", "Social Media Graphics", "Marketing Collateral", "Vector Illustrations"],
+    badge: "Branding Kit",
+    startingPrice: "From $80",
+    features: [
+      "Vector Logos (AI, EPS, SVG, PNG)",
+      "Complete Brand Guidelines & Color Palettes",
+      "Social Media Templates & Ad Creatives",
+      "Full Commercial Copyright Transfer"
+    ],
+    packages: [
+      {
+        name: "01. Essential Brand Kit (Starter)",
+        tagline: "Logo & Brand Foundation",
+        price: "$80 - $150",
+        timeline: "3-5 Business Days",
+        deliverables: [
+          "2 Unique Logo Concepts + Favicon",
+          "High-Res Vector Files (AI, SVG, PNG)",
+          "Brand Color Palette & Typography Hierarchy",
+          "Unlimited Concept Revisions"
+        ]
+      },
+      {
+        name: "02. Complete Identity Suite (Business)",
+        tagline: "Full Commercial Brand Book",
+        price: "$200 - $350",
+        timeline: "7-10 Business Days",
+        popular: true,
+        deliverables: [
+          "Full Brand Guidelines Book & Rulebook",
+          "Social Media Kit (Covers, Avatars, 6 Post Templates)",
+          "Stationery Set (Business Card, Letterhead, Envelope)",
+          "Ready-to-Print & Web-Optimized Assets"
+        ]
+      },
+      {
+        name: "03. Enterprise 360 Branding (Premium)",
+        tagline: "Complete Brand Ecosystem",
+        price: "$450 - $700",
+        timeline: "14-20 Business Days",
+        deliverables: [
+          "Full Corporate Brand Architecture & Strategy",
+          "Custom 3D / Vector Illustrations & Icon Set",
+          "Marketing Pitch Deck & Brochure Design",
+          "Full Source Ownership & Commercial Licensing"
+        ]
+      }
+    ]
   },
   {
     id: "digital-marketing",
     title: "Digital Marketing & Growth",
-    shortDesc: "Performance marketing campaigns tailored to scale.",
-    description: "Maximize your reach and return on ad spend with targeted ad campaigns, email funnels, and data-backed performance marketing.",
+    shortDesc: "Performance campaigns and lead funnels engineered for maximum ROI.",
+    description: "Maximize return on ad spend with targeted Meta & Google Ads campaigns, automated email marketing funnels, conversion rate optimization, and transparent analytics.",
     iconName: "BarChart3",
-    features: ["Google & Meta Ads", "Conversion Rate Optimization", "Email Marketing Funnels", "Analytics & ROI Reporting"],
+    badge: "High ROI",
+    startingPrice: "From $150/mo",
+    features: [
+      "Meta Ads (Facebook/Instagram) & Google Search",
+      "Conversion Rate Optimization (CRO)",
+      "A/B Testing & Audience Retargeting",
+      "Direct WhatsApp Lead Funnels"
+    ],
+    packages: [
+      {
+        name: "01. Starter Ad Campaign (Launch)",
+        tagline: "New Lead Generation",
+        price: "$150 - $250 / Month",
+        timeline: "14-Day Cycle",
+        deliverables: [
+          "Meta (FB/Insta) or Google Search Setup",
+          "2 Target Audience Segments & Copywriting",
+          "3 High-Converting Ad Creatives Designed",
+          "Weekly Performance & Lead Analytics"
+        ]
+      },
+      {
+        name: "02. Growth Funnel (Performance)",
+        tagline: "Multi-Channel Scaling",
+        price: "$350 - $550 / Month",
+        timeline: "Monthly Retainer",
+        popular: true,
+        deliverables: [
+          "Omni-Platform Campaign (Meta + Google Search)",
+          "Retargeting Pixel & Custom Audience Setup",
+          "Landing Page CRO & A/B Split Testing",
+          "Bi-Weekly Strategy Calls & ROI Optimization"
+        ]
+      },
+      {
+        name: "03. Market Domination (Enterprise)",
+        tagline: "Scale to 7-Figures",
+        price: "$750 - $1,200 / Month",
+        timeline: "Monthly Dedicated Management",
+        deliverables: [
+          "Full Omni-Channel (Meta, Google, TikTok, Email)",
+          "High-Converting Sales Funnel Engineering",
+          "Custom Real-Time Analytics Dashboard",
+          "Dedicated 24/7 Growth Manager"
+        ]
+      }
+    ]
   },
 ];
 
@@ -129,43 +416,43 @@ export const featuresData: Feature[] = [
   {
     id: "01",
     number: "01",
-    title: "Free Premium Plugins & Tools",
-    description: "Access essential tools and premium plugins at no extra cost to enhance your website's functionality and performance.",
+    title: "Free 1-Year Domain & Hosting",
+    description: "Enjoy complimentary 1-year domain registration and high-reliability Hostinger server management included with web development projects.",
     iconName: "Gift",
   },
   {
     id: "02",
     number: "02",
     title: "3-Month Free Dedicated Support",
-    description: "Enjoy dedicated technical support for three months after launch to ensure smooth operations and a seamless user experience.",
+    description: "Enjoy dedicated technical support for three months after launch to ensure smooth operations and seamless user experience.",
     iconName: "Headphones",
   },
   {
     id: "03",
     number: "03",
-    title: "Customer-Centric Strategy",
-    description: "We create strategies tailored to your business goals, improving engagement, conversions, and long-term digital growth.",
+    title: "20% Combo Loyalty Discount",
+    description: "Save 20% on total project investment when bundling UI/UX Design with Website Development.",
     iconName: "Target",
   },
   {
     id: "04",
     number: "04",
-    title: "High-Quality Visuals & UI",
-    description: "Professional, premium images and graphics that strengthen your brand and make your digital presence visually unforgettable.",
+    title: "100% Risk-Free Guarantee",
+    description: "Full refund of initial deposit within the first 7 days if project progress does not meet your agreed expectations.",
     iconName: "Eye",
   },
   {
     id: "05",
     number: "05",
-    title: "Advanced Next.js Technology",
-    description: "Implement cutting-edge Next.js features and lightning-fast server components to provide a superior digital experience.",
+    title: "Next.js & Code-First SEO",
+    description: "Built with bleeding-edge Next.js architecture, ensuring sub-second speeds and flawless Core Web Vitals.",
     iconName: "Cpu",
   },
   {
     id: "06",
     number: "06",
-    title: "Affordable & Reasonable Pricing",
-    description: "Get top-quality digital solutions at competitive prices, ensuring maximum ROI without compromising on quality.",
+    title: "Transparent SLA Pricing",
+    description: "Every service is backed by a clear Service Level Agreement with fixed milestones and zero surprise fees.",
     iconName: "BadgeDollarSign",
   },
 ];
