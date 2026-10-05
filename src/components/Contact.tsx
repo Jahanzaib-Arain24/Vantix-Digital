@@ -2,24 +2,41 @@
 
 import { useState } from "react";
 import { Mail, MessageSquare, MapPin, Send, CheckCircle2, Clock, ShieldCheck } from "lucide-react";
-import { siteConfig } from "@/data/siteData";
+import { siteConfig, servicesData } from "@/data/siteData";
 
 export default function Contact() {
+  const initialService = servicesData[0];
+  const initialPkg = initialService.packages.find((p) => p.popular) || initialService.packages[0];
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    service: "Website Development",
-    budget: "$500 - $1,500",
+    service: initialService.title,
+    budget: `${initialPkg.name} — ${initialPkg.price}`,
     message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
 
+  // Find the selected service's full SLA data dynamically
+  const activeServiceData = servicesData.find((s) => s.title === formData.service) || servicesData[0];
+
+  const handleServiceChange = (newServiceTitle: string) => {
+    const matchedService = servicesData.find((s) => s.title === newServiceTitle) || servicesData[0];
+    const popularPkg = matchedService.packages.find((p) => p.popular) || matchedService.packages[0];
+    
+    setFormData((prev) => ({
+      ...prev,
+      service: newServiceTitle,
+      budget: `${popularPkg.name} — ${popularPkg.price}`,
+    }));
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
     // Construct WhatsApp message URL for direct instant conversion
-    const text = `*New Project Inquiry from Website*%0A%0A*Name:* ${encodeURIComponent(formData.name)}%0A*Email:* ${encodeURIComponent(formData.email)}%0A*Service:* ${encodeURIComponent(formData.service)}%0A*Budget:* ${encodeURIComponent(formData.budget)}%0A*Message:* ${encodeURIComponent(formData.message || "Hi, I would like to discuss my project.")}`;
+    const text = `*New Project Inquiry from Website*%0A%0A*Name:* ${encodeURIComponent(formData.name)}%0A*Email:* ${encodeURIComponent(formData.email)}%0A*Service:* ${encodeURIComponent(formData.service)}%0A*Selected Plan / Budget:* ${encodeURIComponent(formData.budget)}%0A*Message:* ${encodeURIComponent(formData.message || "Hi, I would like to discuss my project requirements.")}`;
     
     const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${text}`;
     
@@ -191,39 +208,42 @@ export default function Contact() {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Service */}
+                  {/* Interested Service */}
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
                       Interested Service
                     </label>
                     <select
                       value={formData.service}
-                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                      onChange={(e) => handleServiceChange(e.target.value)}
                       className="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700/80 text-white text-sm focus:outline-none focus:border-emerald-500 transition-colors"
                     >
-                      <option value="Website Development">Website Development</option>
-                      <option value="UI/UX Creative Design">UI/UX Creative Design</option>
-                      <option value="SEO (Search Engine Optimization)">SEO & Growth</option>
-                      <option value="Guest Posting & Link Building">Guest Posting & Backlinks</option>
-                      <option value="Brand Identity & Graphic Design">Brand Identity & Design</option>
-                      <option value="Digital Marketing & Ads">Digital Marketing & Ads</option>
+                      {servicesData.map((svc) => (
+                        <option key={svc.id} value={svc.title}>
+                          {svc.title}
+                        </option>
+                      ))}
                     </select>
                   </div>
 
-                  {/* Budget */}
+                  {/* Dynamic SLA Plan / Budget Dropdown based on selected service */}
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                      Estimated Budget
+                      SLA Plan & Price
                     </label>
                     <select
                       value={formData.budget}
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700/80 text-white text-sm focus:outline-none focus:border-emerald-500 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700/80 text-white text-sm focus:outline-none focus:border-emerald-500 transition-colors font-medium"
                     >
-                      <option value="$40 - $150">$40 - $150 (Starter / Single Placement)</option>
-                      <option value="$200 - $400">$200 - $400 (Kickstart / Local SEO / UI Kit)</option>
-                      <option value="$400 - $750">$400 - $750 (Growth Hub / Business Edition)</option>
-                      <option value="$900 - $1,500+">$900 - $1,500+ (Market Leader / Full Enterprise)</option>
+                      {activeServiceData.packages.map((pkg, idx) => (
+                        <option key={idx} value={`${pkg.name} — ${pkg.price}`}>
+                          {pkg.name} ({pkg.price})
+                        </option>
+                      ))}
+                      <option value="Custom Enterprise / Tailored Scope">
+                        Custom Enterprise / Tailored Scope
+                      </option>
                     </select>
                   </div>
                 </div>
@@ -235,7 +255,7 @@ export default function Contact() {
                   </label>
                   <textarea
                     rows={4}
-                    placeholder="Tell us about your project, timeline, and any specific features you need..."
+                    placeholder="Tell us about your project goals, timeline, and any specific requirements..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700/80 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-500 transition-colors resize-none"
