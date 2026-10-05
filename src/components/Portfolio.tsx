@@ -6,14 +6,7 @@ import { ExternalLink, Layers, ArrowRight, Eye, X, Globe } from "lucide-react";
 import { portfolioData, PortfolioProject, siteConfig } from "@/data/siteData";
 
 export default function Portfolio() {
-  const [filter, setFilter] = useState("all");
   const [activePreview, setActivePreview] = useState<PortfolioProject | null>(null);
-
-  const categories = ["all", ...Array.from(new Set(portfolioData.map((p) => p.category)))];
-
-  const filteredProjects = filter === "all"
-    ? portfolioData
-    : portfolioData.filter((p) => p.category === filter);
 
   return (
     <section id="portfolio" className="py-20 md:py-28 relative overflow-hidden">
@@ -23,7 +16,7 @@ export default function Portfolio() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs sm:text-sm font-medium mb-3">
             <Layers className="w-3.5 h-3.5" />
             <span>Our Portfolio</span>
@@ -38,26 +31,9 @@ export default function Portfolio() {
           </p>
         </div>
 
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
-                filter === cat
-                  ? "bg-emerald-500 text-slate-950 font-semibold shadow-md shadow-emerald-500/20"
-                  : "bg-slate-900/80 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800"
-              }`}
-            >
-              {cat === "all" ? "All Projects" : cat}
-            </button>
-          ))}
-        </div>
-
         {/* Portfolio Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {filteredProjects.map((project) => (
+          {portfolioData.map((project) => (
             <div
               key={project.id}
               className="group rounded-3xl bg-slate-900/80 border border-slate-800 overflow-hidden flex flex-col justify-between h-full hover:border-emerald-500/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-500/10"
