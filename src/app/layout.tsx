@@ -23,7 +23,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vantixdigital.com"),
+  metadataBase: new URL("https://vantix-digital.netlify.app"),
   title: "Vantix Digital — Smart Digital Solutions for Modern Brands",
   description: "Vantix Digital is a results-driven digital agency helping startups, businesses, and modern brands grow through website development, UI/UX design, SEO, and digital strategy.",
   keywords: [
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Vantix Digital — Smart Digital Solutions for Modern Brands",
     description: "Results-driven digital agency building powerful websites, modern UI/UX design, and sustainable digital growth.",
-    url: "https://vantixdigital.com",
+    url: "https://vantix-digital.netlify.app",
     siteName: "Vantix Digital",
     images: [
       {

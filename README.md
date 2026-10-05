@@ -6,8 +6,8 @@
   <p><i>"Turning Ideas into High-Performance, Scalable & Converting Digital Experiences"</i></p>
 
   <p align="center">
-    <a href="https://vantixdigital.com" target="_blank">
-      <img src="https://img.shields.io/badge/🌐_Live_Website-vantixdigital.com-10b981?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Website" />
+    <a href="https://vantix-digital.netlify.app/" target="_blank">
+      <img src="https://img.shields.io/badge/🌐_Live_Demo-vantix--digital.netlify.app-10b981?style=for-the-badge&logo=netlify&logoColor=white" alt="Live Demo" />
     </a>
     <a href="https://wa.me/447840179553" target="_blank">
       <img src="https://img.shields.io/badge/💬_WhatsApp-Direct_Inquiry-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp Direct" />
@@ -24,7 +24,7 @@
   <img src="https://img.shields.io/badge/Tailwind_CSS-Design_Tokens-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
   <img src="https://img.shields.io/badge/Lucide_Icons-Tree_Shaken-F97316?style=for-the-badge" alt="Lucide Icons" />
   <img src="https://img.shields.io/badge/Responsive-Mobile_First_100%25-6366f1?style=for-the-badge&logo=googlechrome&logoColor=white" alt="100% Responsive" />
-  <img src="https://img.shields.io/badge/Core_Web_Vitals-Sub_Second_Speed-10b981?style=for-the-badge&logo=speedtest" alt="Core Web Vitals" />
+  <img src="https://img.shields.io/badge/Deploy-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Netlify Deployment" />
   <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="MIT License" />
 </p>
 
@@ -36,7 +36,7 @@
 
 The application is deployed and available for testing and client review:
 
-- 🔗 **Official Website**: [https://vantixdigital.com](https://vantixdigital.com)
+- 🔗 **Production URL**: [https://vantix-digital.netlify.app/](https://vantix-digital.netlify.app/)
 - 💬 **WhatsApp Direct Desk**: [+44 7840 179553](https://wa.me/447840179553)
 - 📧 **Official Agency Email**: [hello.vantixdigital@gmail.com](mailto:hello.vantixdigital@gmail.com)
 - 📍 **Headquarters**: 45 King Street, Manchester M2 7AY, United Kingdom
