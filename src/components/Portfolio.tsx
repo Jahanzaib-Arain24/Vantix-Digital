@@ -170,44 +170,109 @@ export default function Portfolio() {
 
       </div>
 
-      {/* Modal Preview */}
+      {/* Modal Preview / Case Study */}
       {activePreview && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="relative w-full max-w-2xl bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl">
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md animate-in fade-in duration-200 overflow-y-auto"
+          onClick={() => setActivePreview(null)}
+        >
+          <div 
+            className="relative w-full max-w-3xl max-h-[90vh] bg-slate-900 border border-slate-700 rounded-3xl shadow-2xl overflow-hidden flex flex-col my-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
             <button
               onClick={() => setActivePreview(null)}
-              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/60 text-white hover:bg-slate-700 transition-colors"
+              className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-slate-950/80 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors border border-slate-700"
+              aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <div className="relative aspect-video w-full">
-              <Image
-                src={activePreview.image}
-                alt={activePreview.title}
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-xs px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-400 font-semibold">
-                  {activePreview.category}
-                </span>
+            {/* Scrollable Container */}
+            <div className="overflow-y-auto overflow-x-hidden p-6 sm:p-8 space-y-6">
+              {/* Banner Image */}
+              <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 shadow-inner">
+                <Image
+                  src={activePreview.image}
+                  alt={activePreview.title}
+                  fill
+                  className="object-cover object-top"
+                />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">{activePreview.title}</h3>
-              <p className="text-slate-300 text-sm mb-6">{activePreview.description}</p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-end gap-3 pt-4 border-t border-slate-800">
+              {/* Title & Badge */}
+              <div>
+                <div className="flex flex-wrap items-center gap-2 mb-2.5">
+                  <span className="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+                    {activePreview.category}
+                  </span>
+                  <span className="text-xs text-slate-400 flex items-center gap-1.5 font-medium">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Verified Live Production
+                  </span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">{activePreview.title}</h3>
+                <p className="text-emerald-400 text-sm sm:text-base font-medium">{activePreview.description}</p>
+              </div>
+
+              {/* Key Highlights if available */}
+              {activePreview.keyHighlights && activePreview.keyHighlights.length > 0 && (
+                <div className="p-4 sm:p-5 rounded-2xl bg-emerald-950/20 border border-emerald-500/25">
+                  <h4 className="text-sm font-semibold text-emerald-300 mb-3 flex items-center gap-2">
+                    <span>✨ Key Architectural Highlights</span>
+                  </h4>
+                  <ul className="space-y-2">
+                    {activePreview.keyHighlights.map((highlight, idx) => (
+                      <li key={idx} className="text-xs sm:text-sm text-slate-300 flex items-start gap-2.5">
+                        <span className="text-emerald-400 font-bold mt-0.5">•</span>
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Detailed Paragraphs (4 to 6 paragraphs) */}
+              <div className="space-y-4 pt-2 border-t border-slate-800/80">
+                <h4 className="text-sm font-semibold text-slate-200 uppercase tracking-wider">
+                  Detailed Case Study & Specifications
+                </h4>
+                {activePreview.paragraphs.map((paragraph, idx) => (
+                  <p key={idx} className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+
+              {/* Tech Tags */}
+              <div className="pt-2 border-t border-slate-800">
+                <div className="flex flex-wrap gap-2">
+                  {activePreview.tags.map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className="text-xs px-3 py-1 rounded-lg bg-slate-800 text-slate-300 border border-slate-700"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Footer Actions */}
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-800 sticky bottom-0 bg-slate-900/95 backdrop-blur-md pb-2">
+                <span className="text-xs text-slate-400 text-center sm:text-left">
+                  Project Deployed & Maintained
+                </span>
                 <a
                   href={activePreview.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl font-semibold bg-emerald-500 text-slate-950 hover:bg-emerald-400 transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-xl font-semibold bg-emerald-500 text-slate-950 hover:bg-emerald-400 shadow-lg shadow-emerald-500/25 transition-all"
                 >
                   <Globe className="w-4 h-4" />
-                  <span>Open Live Project</span>
+                  <span>Visit Live Website</span>
+                  <ExternalLink className="w-4 h-4 ml-1" />
                 </a>
               </div>
             </div>

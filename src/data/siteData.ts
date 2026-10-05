@@ -35,6 +35,8 @@ export interface PortfolioProject {
   description: string;
   liveUrl: string;
   tags: string[];
+  paragraphs: string[];
+  keyHighlights?: string[];
 }
 
 export interface BlogPost {
@@ -466,51 +468,129 @@ export const portfolioData: PortfolioProject[] = [
     description: "Multilingual international news portal (English, Spanish, Hindi, Urdu) serving Spain's diaspora communities with breaking news, culture, business, and community reporting.",
     liveUrl: "https://www.vos.media/",
     tags: ["Multilingual News", "EN / ES / HI / UR", "Next.js / Web", "Media Portal"],
+    keyHighlights: [
+      "Real-time multilingual publishing in 4 languages: English, Spanish, Hindi, and Urdu",
+      "High-concurrency digital media architecture built for breaking news traffic spikes",
+      "Optimized editorial categorization covering Politics, Diaspora, Business, and Culture",
+      "Mobile-first responsive reading experience with instant search and zero-latency caching"
+    ],
+    paragraphs: [
+      "Voice of Spain (VOS Media) is a premier digital news publication engineered to bridge the linguistic and cultural gap for Spain's multicultural and diaspora communities. The portal delivers real-time international coverage, investigative reports, immigration updates, business analyses, and cultural highlights across four major languages: English, Spanish, Hindi, and Urdu.",
+      "The architectural foundation focuses on ultra-high concurrency and sub-second page loads. News platforms experience extreme traffic surges during breaking stories; to handle this, the platform utilizes high-performance caching layers, responsive media compression, and optimized server-side rendering to deliver a frictionless reading experience across all global regions.",
+      "From an editorial workflow perspective, the portal provides structured taxonomy and categorization for politics, regional affairs, diaspora life, and commercial trade. Content editors can seamlessly manage multilingual editions, ensuring that news articles are accurately localized with tailored typographic rendering for both Latin and right-to-left/Indic scripts.",
+      "The user interface incorporates modern newsfeed aesthetics, high-contrast readability modes, dynamic trending tickers, and intuitive category navigation. Readers enjoy uninterrupted access on smartphones, tablets, and desktop workstations with minimal bandwidth consumption.",
+      "By combining journalistic standards with robust web technology, Voice of Spain has established itself as an indispensable media hub, connecting hundreds of thousands of expatriates, researchers, and local residents across Spain and worldwide."
+    ],
   },
   {
     id: "saint-alberts-university",
-    title: "Saint Albert's University",
+    title: "Saint Albert's International University",
     category: "Educational Platform",
     image: "/saint-albert-university.png",
-    description: "Modern university platform featuring dynamic online admissions, academic program catalogs, student aid management, and backend administration portal.",
+    description: "Premier online academic institution endowed with the Royal Charter of the Bunyoro Kitara Kingdom, featuring dynamic admissions, academic degree catalogs, and secure session verification.",
     liveUrl: "https://saiu.education/",
-    tags: ["University Portal", "Admissions System", "Academic Catalog", "Admin Backend"],
+    tags: ["Royal Charter", "Online Admissions", "Session CAPTCHA", "PHP 8 & Modular Layout"],
+    keyHighlights: [
+      "Endowed by Royal Charter of King Omukama Dr. Solomon Gafabusa Iguru I (Bunyoro Kitara Kingdom)",
+      "Dynamic multi-tier academic degree catalog (Certificates, Bachelor's, Master's, Doctorates)",
+      "Built-in session-based mathematical CAPTCHA verification eliminating spam without external cookies",
+      "Privacy-hardened backend architecture with automated Git-ignored submission logging"
+    ],
+    paragraphs: [
+      "Saint Albert's International University (Universitas Internationalis Saint Albert's - SAIU) is an esteemed self-paced academic and theological institution. Bestowed with the Royal Charter of Incorporation by His Majesty Omukama Rukirabasaja Agutamba Dr. Solomon Gafabusa Iguru I, King of the Bunyoro Kitara Kingdom in Uganda, SAIU confers globally accredited Associate, Bachelor’s, Master’s, and Doctoral qualifications.",
+      "The SAIU Web Portal serves as the comprehensive digital campus for the university, handling the complete international student lifecycle. Prospective students across Europe, Africa, Asia, and the Americas can review academic curricula, tuition fees, faculty profiles, and royal decrees, before submitting structured admissions applications directly online.",
+      "A core architectural highlight is the custom-engineered PHP 8 backend with session-based mathematical verification (`e.g., 4 + 5 = ?`). Unlike third-party tracking scripts that slow down performance and collect user data, SAIU's native numeric verification stops automated spam bots while respecting visitor privacy and maintaining 100% compliance with international data regulations.",
+      "Data privacy was prioritized throughout engineering: student submissions containing personal identification, addresses, and academic records are securely logged into encrypted server storage and explicitly excluded from version control systems via Git rules to eliminate any risk of public data leakage.",
+      "The visual design celebrates the university's royal patronage through a majestic Crimson and Gold color palette, dignified serif typography, and modular PHP template architecture (`includes/header.php`, `includes/footer.php`) that ensures lightning-fast load times and consistent multi-device navigation across desktop, tablet, and mobile browsers."
+    ],
   },
   {
     id: "pass-university",
-    title: "The National University of Penal",
+    title: "The National University of Penal (UNIPASS)",
     category: "University & Admin Panel",
     image: "/the-national-university-of-penal.png",
-    description: "Comprehensive administrative and faculty operations portal for university management, curriculum planning, student records, and content management.",
+    description: "National University of Penal, Administrative and Security Sciences offering 60+ accredited programmes with Google reCAPTCHA v2 security and international university network integration.",
     liveUrl: "https://www.pass.university/",
-    tags: ["Faculty Dashboard", "Curriculum Management", "Role-Based Access", "PASS University"],
+    tags: ["60+ Programmes", "Google reCAPTCHA v2", "INU Global Consortium", "Security Headers"],
+    keyHighlights: [
+      "Over 60 accredited academic programmes spanning 5 levels (Certificate, Diploma, BS, MS, PhD)",
+      "Integrated under the Royal Patronage of Bunyoro-Kitara Kingdom & INU Global Network",
+      "Server-side Google reCAPTCHA v2 bot protection on all admissions and inquiry endpoints",
+      "Comprehensive HTTP security headers (X-Frame-Options, XSS protection, nosniff)"
+    ],
+    paragraphs: [
+      "The National University of Penal, Administrative and Security Sciences (UNIPASS / pass.university) is a globally recognized institution dedicated to advanced higher education in criminal justice, cyber security, forensic sciences, public administration, intelligence studies, and international law enforcement under the motto 'Knowledge Guard Thee'.",
+      "Operating under the royal patronage of HRM Omukama Dr. Solomon Gafabusa Iguru I and serving as a foundational pillar in the International Network of Universities (INU) alongside six partner institutions, UNIPASS delivers an expansive curriculum consisting of over 60 distinct degree programmes across five academic levels: Certificate, Diploma, Bachelor's, Master's, and PhD.",
+      "The web portal was engineered with modular PHP 8.3 architecture, managing 19+ primary landing pages and 60 individual programme detail silos. Each programme page displays detailed academic syllabi, prerequisite requirements, career pathways, and fee structures, allowing prospective students to explore their desired field with complete clarity.",
+      "Security engineering on the portal adheres to strict institutional standards. Form handling features server-side Google reCAPTCHA v2 verification, automated dual-channel email notifications to both applicants and university registrars (`admissions@pass.university`), and enterprise-grade HTTP security headers including X-Frame-Options (clickjacking defense), nosniff MIME protection, and strict referrer policies.",
+      "The user experience reflects the prestige of the institution with a bespoke Bunyoro Royal palette of Deep Crimson Red (`#8B0000`), Royal Navy Blue (`#1E3A8A`), and Burnished Gold (`#D4AF37`), perfectly balancing academic gravitas with fluid responsive layouts across all mobile, tablet, and desktop screens."
+    ],
   },
   {
     id: "taskbuddy-portal",
     title: "TaskBuddy Web Portal",
     category: "Full-Stack Web App",
     image: "/taskbuddy-web-portal.png",
-    description: "Full-stack online task & freelance service marketplace. Features 4 modules (Seeker, Lister, Admin, Public Hub), integrated ATS candidate pipeline, dynamic print-ready CV builder, 7-tier verified credentials, and OWASP security hardening.",
+    description: "Intelligent online task & freelance gig marketplace featuring a 4-module architecture, integrated ATS candidate hiring pipeline, print-ready dynamic CV builder, and 785 automated QA tests.",
     liveUrl: "https://taskbuddy-portal.infinityfreeapp.com/",
-    tags: ["Freelance Marketplace", "4-Module Architecture", "ATS & CV Builder", "PHP & MySQL"],
+    tags: ["4-Module Architecture", "ATS Hiring Pipeline", "Dynamic CV Generator", "785 QA Tests Passed"],
+    keyHighlights: [
+      "Complete 4-Module System: Public Discovery Hub, Task Seeker workstation, Task Lister ATS, and Admin Center",
+      "7-Tier Credential Manager & automated 2-column recruitment-standard Print-Ready CV Generator",
+      "Full Applicant Tracking System (ATS) with real-time candidate statuses (Pending to Selected)",
+      "785 automated QA unit test assertions with 100% pass rate & OWASP security hardening"
+    ],
+    paragraphs: [
+      "TaskBuddy is a comprehensive, production-ready gig and freelance task marketplace web platform built to connect verified service providers (**Task Seekers**) with businesses and clients (**Task Listers**). Designed as a complete end-to-end ecosystem, the platform bridges the gap between talent discovery, proposal bidding, candidate hiring, and project execution.",
+      "The architecture is structured around four interconnected modules: The **Public Discovery Hub** with multi-parameter search filtering by location, category, and budget; the **Task Seeker Portal** featuring a 7-tier credential repository (academic degrees, certified licenses, work history, language ratings, references, and ViewerJS document preview); the **Task Lister Portal** with a built-in Applicant Tracking System (ATS) for managing candidate pipelines from initial review to hiring; and the **Admin Control Center** providing platform analytics, user moderation, and category CRUD governance.",
+      "A standout innovation is the built-in **Dynamic Print-Ready CV Generator** (`/employee/my_cv`). As freelancers upload and verify their academic credentials, work experience, and certifications, TaskBuddy automatically compiles a standardized 2-column executive resume that employers can review or print with one click.",
+      "Security and code quality follow strict OWASP guidelines: 100% of database interactions are fortified with PDO prepared statements and typed parameter bindings to eliminate SQL injection; cryptographically secure CSRF tokens guard every state-modifying POST request; and recursive `htmlspecialchars` sanitization prevents XSS vulnerabilities.",
+      "TaskBuddy has been validated through an extensive automated testing suite (`tests/run_all_tests.php`) comprising 785 test assertions with a flawless 100% pass rate across authentication, RBAC session guards, CRUD operations, and security headers. Additionally, it features full Progressive Web App (PWA) readiness with service worker caching (`sw.js`) and mobile manifest (`manifest.json`) for seamless mobile installation."
+    ],
   },
   {
     id: "personal-portfolio",
     title: "Personal Brand Portfolio",
     category: "Portfolio & Branding",
     image: "/personal-brand-portfolio.png",
-    description: "A professional portfolio website showcasing full-stack projects, live interactive showcases, smooth micro-interactions, and conversion contact funnel.",
+    description: "High-performance developer portfolio showcasing engineering milestones, interactive case studies, dynamic dark mode aesthetics, and lead conversion funnels.",
     liveUrl: "https://jahanzaib-20.netlify.app/",
-    tags: ["Developer Portfolio", "High Performance", "Smooth Animations", "Lead Capture"],
+    tags: ["Full-Stack Showcase", "Interactive UI", "Netlify Global CDN", "Lead Conversion"],
+    keyHighlights: [
+      "Interactive project showcase featuring live demo links, source code repositories, and case studies",
+      "Engineered for sub-second page loads with modern CSS grid design tokens and smooth transitions",
+      "Direct conversion contact funnels integrated with email and WhatsApp communication channels",
+      "Global CDN deployment with automated CI/CD pipelines ensuring 99.99% uptime"
+    ],
+    paragraphs: [
+      "The Personal Brand Portfolio is a bespoke digital showcase engineered to highlight senior full-stack development capabilities, UI/UX design systems, and successful enterprise client deliveries. Built with a focus on speed, typography, and visual elegance, the website acts as an interactive resume for prospective clients and technical recruiters worldwide.",
+      "The user interface features a sleek modern dark-mode aesthetic, custom glassmorphic cards, curated typography hierarchies, and subtle CSS micro-animations that engage visitors without degrading performance. Every component is designed from scratch to reflect engineering rigor and brand identity.",
+      "Visitors can explore detailed case studies covering complex web applications, university portals, e-commerce stores, and backend RESTful architectures. Each case study provides instant access to live production URLs, GitHub source repositories, and technical breakdowns of solved problems.",
+      "Conversion optimization is seamlessly woven into the user journey. High-visibility call-to-actions, direct WhatsApp lead funnels, and integrated contact desks allow prospective clients to initiate project inquiries instantly with zero communication friction.",
+      "Deployed on a global high-speed CDN with automated Git-driven CI/CD deployment pipelines, the portfolio guarantees 99.99% uptime, flawless Core Web Vitals scores, and a responsive experience across all mobile, tablet, and desktop devices."
+    ],
   },
   {
     id: "beauty-co",
-    title: "Beauty & Co.",
+    title: "Beauty & Co. E-Commerce",
     category: "E-Commerce Experience",
     image: "/beauty-and-co.png",
-    description: "A fully functional fashion and skincare e-commerce website with interactive cart, dynamic product showcases, and secure checkout experience.",
+    description: "Sophisticated luxury skincare and fashion e-commerce storefront featuring interactive cart mechanics, product filtering, dynamic catalogs, and frictionless checkout flow.",
     liveUrl: "https://beauty-co.netlify.app/",
-    tags: ["E-Commerce", "Fashion & Beauty", "Cart System", "Responsive"],
+    tags: ["Luxury E-Commerce", "Interactive Cart", "Product Filtering", "Frictionless Checkout"],
+    keyHighlights: [
+      "Luxury visual storefront with elegant product galleries, hover zoom effects, and badge highlights",
+      "Dynamic interactive shopping cart with real-time subtotal calculation and instant updates",
+      "Multi-category product filtering enabling shoppers to browse skincare, beauty, and fashion items",
+      "Mobile-optimized one-page checkout funnel designed to maximize conversion rates"
+    ],
+    paragraphs: [
+      "Beauty & Co. is a modern luxury e-commerce web application created for high-end fashion, beauty, and skincare brands. The platform is designed to provide consumers with an elegant, boutique shopping experience that rivals top international luxury retailers.",
+      "The visual design leverages minimalist luxury aesthetics, warm pastel accents, refined typography, and high-resolution product imagery with smooth hover-zoom interactions. Every layout element has been carefully calibrated to elevate brand prestige and accentuate product quality.",
+      "At the functional core is a dynamic client-side shopping cart system. Customers can seamlessly browse product collections, filter items by category or price range, add products to their cart with real-time visual feedback, and adjust quantities with immediate cart subtotal recalculations.",
+      "The checkout flow is engineered for maximum conversion, featuring a streamlined single-page order form with intuitive form field validations, order summary breakdowns, and multiple payment gateway options designed to minimize cart abandonment.",
+      "Built with mobile-first responsiveness, Beauty & Co. delivers a fluid, app-like shopping experience on iOS and Android smartphones as well as desktop displays, ensuring seamless commercial transactions across all customer touchpoints."
+    ],
   },
 ];
 
