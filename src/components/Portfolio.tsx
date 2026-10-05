@@ -9,7 +9,7 @@ export default function Portfolio() {
   const [filter, setFilter] = useState("all");
   const [activePreview, setActivePreview] = useState<PortfolioProject | null>(null);
 
-  const categories = ["all", "Web Design & Development", "E-Commerce Experience", "Portfolio & Branding"];
+  const categories = ["all", ...Array.from(new Set(portfolioData.map((p) => p.category)))];
 
   const filteredProjects = filter === "all"
     ? portfolioData

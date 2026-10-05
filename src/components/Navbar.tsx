@@ -63,7 +63,7 @@ export default function Navbar() {
         <Link href="#home" className="flex items-center gap-2 group">
           <div className="relative h-10 w-36 sm:w-44 transition-transform duration-300 group-hover:scale-105">
             <Image
-              src="/Header.png"
+              src="/footer.png"
               alt="Vantix Digital Logo"
               fill
               className="object-contain object-left"
