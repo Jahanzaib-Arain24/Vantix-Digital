@@ -128,15 +128,21 @@ export default function Blog() {
                 {activePost.title}
               </h3>
 
-              <div className="prose prose-invert max-w-none text-slate-300 text-sm sm:text-base leading-relaxed space-y-4">
-                <p>{activePost.description}</p>
-                <p>
-                  In modern agency workflows, staying ahead requires a balance of high aesthetic fidelity and raw performance. With modern frameworks like Next.js, server components, and responsive mobile-first architecture, brands can achieve sub-second load times while delivering engaging visual experiences.
-                </p>
-                <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-3">
+              <div className="prose prose-invert max-w-none text-slate-200 text-sm sm:text-base leading-relaxed space-y-4">
+                {activePost.paragraphs && activePost.paragraphs.length > 0 ? (
+                  activePost.paragraphs.map((para, idx) => (
+                    <p key={idx} className="text-slate-300 leading-relaxed">
+                      {para}
+                    </p>
+                  ))
+                ) : (
+                  <p className="text-slate-300 leading-relaxed">{activePost.description}</p>
+                )}
+
+                <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-3 mt-6">
                   <Sparkles className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                  <p className="text-xs text-emerald-300 font-medium m-0">
-                    Pro Tip: Focus on responsive design, Core Web Vitals, and intuitive UI to increase your customer conversion rate by up to 40%.
+                  <p className="text-xs sm:text-sm text-emerald-300 font-medium m-0">
+                    Vantix Digital Insight: Focus on responsive architecture, Core Web Vitals, and intuitive UI to boost conversion rates and user retention.
                   </p>
                 </div>
               </div>

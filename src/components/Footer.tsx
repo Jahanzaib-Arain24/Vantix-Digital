@@ -245,9 +245,15 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-slate-800/80 bg-slate-950/80 py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-          <p className="text-slate-400 text-center sm:text-left">
-            &copy; 2026 Vantix Digital | All Rights Reserved. Built with Next.js
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm">
+          <p className="text-slate-200 text-center sm:text-left font-medium">
+            &copy; 2026 Vantix Digital | All Rights Reserved{" "}
+            <a
+              href="https://vantix-digital.netlify.app/#"
+              className="text-[#10b981] hover:text-emerald-300 transition-colors font-semibold ml-0.5"
+            >
+              Vantix Digital
+            </a>
           </p>
 
           <div className="flex items-center gap-6">

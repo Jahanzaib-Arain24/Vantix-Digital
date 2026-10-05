@@ -22,9 +22,9 @@ export default function Hero() {
           {/* Left Hero Content */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
             {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-medium mb-6 animate-pulse-slow">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Smart Digital Solutions for Modern Brands</span>
+            <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full bg-emerald-950/90 border border-emerald-400/60 text-emerald-300 text-xs sm:text-sm font-semibold mb-6 shadow-lg shadow-emerald-500/20 backdrop-blur-md">
+              <Sparkles className="w-4 h-4 text-emerald-400 fill-emerald-400/20" />
+              <span className="tracking-wide text-emerald-200">Smart Digital Solutions for Modern Brands</span>
             </div>
 
             {/* Main Headline */}
@@ -36,7 +36,7 @@ export default function Hero() {
             </h1>
 
             {/* Subtitle / Paragraph */}
-            <p className="text-base sm:text-lg text-slate-300/90 leading-relaxed max-w-2xl mb-8">
+            <p className="text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl mb-8 font-normal">
               {siteConfig.description}
             </p>
 
