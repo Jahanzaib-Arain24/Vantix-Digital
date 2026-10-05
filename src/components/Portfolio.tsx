@@ -60,25 +60,19 @@ export default function Portfolio() {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group rounded-3xl bg-slate-900/80 border border-slate-800 overflow-hidden flex flex-col justify-between hover:border-emerald-500/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-500/10"
+              className="group rounded-3xl bg-slate-900/80 border border-slate-800 overflow-hidden flex flex-col justify-between h-full hover:border-emerald-500/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-500/10"
             >
-              <div>
-                {/* Image Banner Container */}
-                <div className="relative aspect-[16/11] w-full overflow-hidden bg-slate-950">
+              <div className="flex flex-col flex-grow">
+                {/* Image Banner Container - Fixed 16:10 Ratio for 100% Equal Size */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-950 flex-shrink-0">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
                   
-                  {/* Badge */}
-                  <div className="absolute top-4 left-4 z-10">
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-900/90 text-emerald-400 border border-emerald-500/30 backdrop-blur-md">
-                      {project.category}
-                    </span>
-                  </div>
-
                   {/* Hover Overlay with Live Link & Preview buttons */}
                   <div className="absolute inset-0 bg-slate-950/70 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
                     <button
@@ -102,18 +96,31 @@ export default function Portfolio() {
                   </div>
                 </div>
 
-                {/* Card Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
-                    {project.title}
-                  </h3>
-                  
-                  <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                    {project.description}
-                  </p>
+                {/* Card Content with consistent heights */}
+                <div className="p-6 flex flex-col flex-grow justify-between">
+                  <div>
+                    {/* Category Badge & Live Pulse Indicator */}
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <span className="text-[11px] font-semibold px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+                        {project.category}
+                      </span>
+                      <span className="text-[11px] text-slate-400 flex items-center gap-1.5 font-medium">
+                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Live
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-white mb-2 line-clamp-1 group-hover:text-emerald-400 transition-colors" title={project.title}>
+                      {project.title}
+                    </h3>
+                    
+                    <p className="text-slate-300 text-sm leading-relaxed mb-4 line-clamp-3 min-h-[60px]">
+                      {project.description}
+                    </p>
+                  </div>
 
                   {/* Tag Pills */}
-                  <div className="flex flex-wrap gap-1.5 mb-2">
+                  <div className="flex flex-wrap gap-1.5 pt-2 min-h-[36px]">
                     {project.tags.map((t, idx) => (
                       <span
                         key={idx}
@@ -127,7 +134,7 @@ export default function Portfolio() {
               </div>
 
               {/* Bottom Action Footer */}
-              <div className="p-6 pt-0">
+              <div className="p-6 pt-0 mt-auto">
                 <a
                   href={project.liveUrl}
                   target="_blank"
