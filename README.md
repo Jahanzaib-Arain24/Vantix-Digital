@@ -149,57 +149,37 @@ Each project in the portfolio features comprehensive real-world documentation:
 
 ---
 
-## 📸 Visual Interface & Portfolio Gallery
+## 📸 Live Client Portfolio Visual Gallery (6 Projects)
 
 <table width="100%">
   <tr>
     <td width="50%" align="center">
-      <b>🚀 Vantix Digital — Agency Hero & Brand Header</b><br/>
-      <img src="public/Header.png" width="100%" alt="Vantix Digital Hero Banner" />
-    </td>
-    <td width="50%" align="center">
-      <b>🏆 About Vantix Digital & Core Guarantees</b><br/>
-      <img src="public/images/about-banner.png" width="100%" alt="About Vantix Digital" />
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" align="center">
-      <b>📰 Voice of Spain (VOS Media) — Multilingual News</b><br/>
+      <b>📰 01. Voice of Spain (VOS Media) — Multilingual News</b><br/>
       <img src="public/voice-of-spain.png" width="100%" alt="Voice of Spain Portal" />
     </td>
     <td width="50%" align="center">
-      <b>🎓 Saint Albert's International University (SAIU)</b><br/>
+      <b>🎓 02. Saint Albert's International University (SAIU)</b><br/>
       <img src="public/saint-albert-university.png" width="100%" alt="Saint Albert University Portal" />
     </td>
   </tr>
   <tr>
     <td width="50%" align="center">
-      <b>🏛️ The National University of Penal (UNIPASS)</b><br/>
+      <b>🏛️ 03. The National University of Penal (UNIPASS)</b><br/>
       <img src="public/the-national-university-of-penal.png" width="100%" alt="UNIPASS PASS University Portal" />
     </td>
     <td width="50%" align="center">
-      <b>💼 TaskBuddy — Intelligent Gig & Task Marketplace</b><br/>
+      <b>💼 04. TaskBuddy — Intelligent Gig & Task Marketplace</b><br/>
       <img src="public/taskbuddy-web-portal.png" width="100%" alt="TaskBuddy Web Portal" />
     </td>
   </tr>
   <tr>
     <td width="50%" align="center">
-      <b>🌐 Personal Brand & Senior Developer Portfolio</b><br/>
+      <b>🌐 05. Personal Brand & Senior Developer Portfolio</b><br/>
       <img src="public/personal-brand-portfolio.png" width="100%" alt="Personal Brand Developer Portfolio" />
     </td>
     <td width="50%" align="center">
-      <b>🛍️ Beauty & Co. — Luxury Skincare & Fashion E-Commerce</b><br/>
+      <b>🛍️ 06. Beauty & Co. — Luxury Skincare & Fashion E-Commerce</b><br/>
       <img src="public/beauty-and-co.png" width="100%" alt="Beauty & Co. E-Commerce" />
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" align="center">
-      <b>📝 Insights — The Future of Web Design in 2026</b><br/>
-      <img src="public/The Future of Web Design in 2026.jpg" width="100%" alt="The Future of Web Design in 2026" />
-    </td>
-    <td width="50%" align="center">
-      <b>📈 Growth — SEO Best Practices: Dominating 2026</b><br/>
-      <img src="public/SEO Best Practices Dominating 2026.webp" width="100%" alt="SEO Best Practices Dominating 2026" />
     </td>
   </tr>
 </table>
