@@ -66,8 +66,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${cuprum.variable} scroll-smooth dark`}>
-      <body className="min-h-screen bg-[#090e17] text-slate-100 antialiased selection:bg-emerald-500 selection:text-white flex flex-col font-sans">
+    <html 
+      lang="en" 
+      className={`${poppins.variable} ${cuprum.variable} scroll-smooth dark`}
+      suppressHydrationWarning
+    >
+      <body 
+        className="min-h-screen bg-[#090e17] text-slate-100 antialiased selection:bg-emerald-500 selection:text-white flex flex-col font-sans"
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>
