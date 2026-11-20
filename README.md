@@ -144,7 +144,7 @@ Each project in the portfolio features comprehensive real-world documentation:
 | **02** | **Saint Albert's University** | Online Academic Campus | [saiu.education](https://saiu.education/) | Royal Charter, PHP 8, Session CAPTCHA, Privacy Logging |
 | **03** | **University of Penal (UNIPASS)** | Security Sciences Portal | [pass.university](https://www.pass.university/) | 60+ Programmes, Google reCAPTCHA v2, INU Global Consortium |
 | **04** | **TaskBuddy Web Portal** | Task & Gig Marketplace | [taskbuddy-portal](https://taskbuddy-portal.infinityfreeapp.com/) | 4 Modules, ATS Hiring Pipeline, Dynamic CV Builder, 785 QA Tests |
-| **05** | **Personal Brand Portfolio** | Full-Stack Showcase | [jahanzaib-20](https://jahanzaib-20.netlify.app/) | Interactive UI, Netlify CDN, WhatsApp Conversion Funnel |
+| **05** | **Personal Brand Portfolio** | Full-Stack Showcase | [jahanzaib-20](https://jahanzaib-24.vercel.app/) | Interactive UI, Netlify CDN, WhatsApp Conversion Funnel |
 | **06** | **Beauty & Co. Storefront** | Luxury E-Commerce | [beauty-co](https://beauty-co.netlify.app/) | Dynamic Shopping Cart, Product Filtering, Fast Checkout |
 
 ---
@@ -345,7 +345,7 @@ This project is open-sourced under the **MIT License** — see the [LICENSE](LIC
 **Muhammad Jahanzaib**  
 *Full-Stack Web Engineer & Founder of Vantix Digital*
 
-- 🌐 **Portfolio**: [jahanzaib-20.netlify.app](https://jahanzaib-20.netlify.app/)
+- 🌐 **Portfolio**: [jahanzaib-24.vercel.app/](https://jahanzaib-24.vercel.app/)
 - 💼 **LinkedIn**: [@jahanzaib-arain](https://www.linkedin.com/in/jahanzaib-arain/)
 - 📧 **Email**: [arainjhanzaib@gmail.com](mailto:arainjhanzaib@gmail.com) / [hello.vantixdigital@gmail.com](mailto:hello.vantixdigital@gmail.com)
 - 💬 **WhatsApp**: [+44 7840 179553](https://wa.me/447840179553)
